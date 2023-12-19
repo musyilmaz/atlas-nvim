@@ -42,7 +42,7 @@ return {
       })
 
       treesitter_context.setup({})
-      require('ts_context_commentstring').setup({})
-    end
+      require("ts_context_commentstring").setup({})
+    end,
   },
 }

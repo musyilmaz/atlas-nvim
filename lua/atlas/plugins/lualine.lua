@@ -4,15 +4,15 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local lualine = require("lualine")
-      local lazy_status = require("lazy.status") 
+      local lazy_status = require("lazy.status")
 
       lualine.setup({
         options = {
           icons_enables = true,
           theme = "tokyonight",
           globalstatus = true,
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
           lualine_x = {
@@ -25,8 +25,8 @@ return {
             { "fileformat" },
             { "filetype" },
           },
-        }
+        },
       })
-    end
-  }
+    end,
+  },
 }

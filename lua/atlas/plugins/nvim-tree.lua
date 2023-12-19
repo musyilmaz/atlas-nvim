@@ -8,14 +8,13 @@ return {
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
 
-
       vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
       vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
       nvimtree.setup({
         view = {
           width = 35,
-          relativenumber = true
+          relativenumber = true,
         },
         renderer = {
           indent_markers = {
@@ -45,10 +44,9 @@ return {
         },
       })
 
-
       local keymap = vim.keymap
 
       keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    end
+    end,
   },
 }
