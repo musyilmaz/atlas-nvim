@@ -11,6 +11,7 @@ keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 keymap.set("n", "<S-l>", ":bnext<cr>", opts, { desc = "Move to next buffer" })
 keymap.set("n", "<S-h>", ":bprevious<cr>", { desc = "Move to previous buffer" })
+keymap.set("n", "<leader>cb", ":Bdelete!<cr>", opts)
 
 keymap.set("n", "<Left>", ":echoe 'use h'<cr>", opts)
 keymap.set("n", "<Right>", ":echoe 'use l'<cr>", opts)
