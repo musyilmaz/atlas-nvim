@@ -18,7 +18,7 @@ return {
           mappings = {
             i = {
               ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-              ["<C-j>"] = actions.move_selection_next,     -- move to next result
+              ["<C-j>"] = actions.move_selection_next, -- move to next result
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             },
           },
@@ -29,21 +29,11 @@ return {
 
       local keymap = vim.keymap
 
-      keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope find file in project" })
-      keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope find string in project" })
-      keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope find in open buffers" })
-      keymap.set(
-        "n",
-        "<leader>fs",
-        "<cmd>Telescope lsp_document_symbols<cr>",
-        { desc = "Telescope find in current buffer symbols" }
-      )
-      keymap.set(
-        "n",
-        "<leader>fd",
-        "<cmd>Telescope diagnostics<cr>",
-        { desc = "Telescope find in current buffer diagnostics" }
-      )
+      keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+      keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
+      keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+      keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>")
+      keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>")
     end,
   },
 }

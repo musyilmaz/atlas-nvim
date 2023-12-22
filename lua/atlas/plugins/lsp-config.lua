@@ -21,6 +21,7 @@ return {
         keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
         keymap.set("n", "<leader>go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
         keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+        keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
         keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
         keymap.set("n", "<leader>d[", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
@@ -28,6 +29,11 @@ return {
       end
 
       local capabilities = cmp_nvim_lsp.default_capabilities()
+
+      local handlers = {
+        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+      }
 
       local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
       for type, icon in pairs(signs) do
@@ -39,36 +45,42 @@ return {
       lspconfig["html"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
       })
 
       -- configure typescript server with plugin
       lspconfig["tsserver"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
       })
 
       -- configure css server
       lspconfig["cssls"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
       })
 
       -- configure tailwindcss server
       lspconfig["tailwindcss"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
       })
 
       -- configure prisma orm server
       lspconfig["prismals"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
       })
 
       -- configure graphql language server
       lspconfig["graphql"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
       })
 
@@ -76,6 +88,7 @@ return {
       lspconfig["emmet_ls"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
       })
 
@@ -83,6 +96,7 @@ return {
       lspconfig["lua_ls"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        handlers = handlers,
         settings = {
           Lua = {
             diagnostics = {
