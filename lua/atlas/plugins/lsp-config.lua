@@ -119,6 +119,14 @@ return {
         capabilities = capabilities,
         on_attach = on_attach,
         handlers = handlers,
+        settings = {
+          css = {
+            validate = true,
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
       })
 
       -- configure tailwindcss server
