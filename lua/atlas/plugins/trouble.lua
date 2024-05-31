@@ -52,8 +52,8 @@ return {
 
       local keymap = vim.keymap
 
-      keymap.set("n", "<leader>tt", ":TroubleToggle<cr>")
-      keymap.set("n", "<leader>td", ":TroubleToggle document_diagnostics<cr>")
+      keymap.set("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>")
+      keymap.set("n", "<leader>td", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
     end,
   },
 }
