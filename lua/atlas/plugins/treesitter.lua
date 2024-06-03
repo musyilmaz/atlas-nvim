@@ -11,11 +11,19 @@ return {
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       local treesitter_context = require("treesitter-context")
+      local nvim_ts_autotag = require("nvim-ts-autotag")
+
+      nvim_ts_autotag.setup({
+        opts = {
+          enable_close = true,
+          enable_rename = true,
+          enable_close_on_slash = true,
+        },
+      })
 
       treesitter.setup({
         highlight = { enable = true },
         indent = { enable = true },
-        autotag = { enable = true },
         incremental_selection = { enable = false },
         ensure_installed = {
           "astro",
