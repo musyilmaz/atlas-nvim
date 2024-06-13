@@ -159,6 +159,14 @@ return {
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
       })
 
+      -- configure astro language server
+      lspconfig["astro"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        handlers = handlers,
+        filetypes = { "astro" },
+      })
+
       -- configure lua server (with special settings)
       lspconfig["lua_ls"].setup({
         capabilities = capabilities,
