@@ -165,6 +165,9 @@ return {
         on_attach = on_attach,
         handlers = handlers,
         filetypes = { "astro" },
+        init_options = {
+          typescript = {},
+        },
       })
 
       -- configure lua server (with special settings)
