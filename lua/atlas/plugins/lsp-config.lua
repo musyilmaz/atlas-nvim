@@ -170,6 +170,13 @@ return {
         },
       })
 
+      lspconfig["gopls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        handlers = handlers,
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      })
+
       -- configure lua server (with special settings)
       lspconfig["lua_ls"].setup({
         capabilities = capabilities,
