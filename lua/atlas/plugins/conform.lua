@@ -8,15 +8,15 @@ return {
 
       conform.setup({
         formatters_by_ft = {
-          javascript = { { "prettierd", "prettier" } },
-          typescript = { { "prettierd", "prettier" } },
-          javascriptreact = { { "prettierd", "prettier" } },
-          typescriptreact = { { "prettierd", "prettier" } },
+          javascript = { "prettierd", "prettier", stop_after_first = true },
+          typescript = { "prettierd", "prettier", stop_after_first = true },
+          javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+          typescriptreact = { "prettierd", "prettier", stop_after_first = true },
           svelte = { "prettier" },
           css = { "prettier" },
           html = { "prettier" },
-          json = { { "prettierd", "prettier" } },
-          jsonc = { { "prettierd", "prettier" } },
+          json = { "prettierd", "prettier", stop_after_first = true },
+          jsonc = { "prettierd", "prettier", stop_after_first = true },
           yaml = { "prettier" },
           markdown = { "prettier" },
           graphql = { "prettier" },
