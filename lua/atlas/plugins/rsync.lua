@@ -1,12 +1,8 @@
 return {
   {
-    "OscarCreator/rsync.nvim",
-    build = "make",
-    dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      local rsync = require("rsync")
-
-      rsync.setup()
-    end,
+    "coffebar/transfer.nvim",
+    lazy = true,
+    cmd = { "TransferInit", "DiffRemote", "TransferUpload", "TransferDownload", "TransferDirDiff", "TransferRepeat" },
+    opts = {},
   },
 }
