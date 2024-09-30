@@ -4,7 +4,9 @@ return {
     build = "make",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
-      require("rsync").setup()
+      local rsync = require("rsync")
+
+      rsync.setup()
     end,
   },
 }
